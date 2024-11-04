@@ -1,18 +1,20 @@
 "use client";
 
 async function fetchData() {
-	const res = await fetch("http://localhost:3000/api/naka");
+	const res = await fetch("/api/naka");
 	console.log(res);
 }
 
 async function fetchJson() {
-	const res = await fetch("http://localhost:3000/api/fetchjson");
+	const res = await fetch("/api/fetchjson");
 	const data = await res.json();
 	console.log(data);
 }
 
 async function deleteJson() {
-	const res = await fetch("http://localhost:3000/api/deletejson");
+	const res = await fetch("/api/deletejson", {
+		method: "DELETE",
+	});
 	const data = await res.json();
 	console.log(data);
 }
